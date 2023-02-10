@@ -7,6 +7,14 @@ function App() {
     <div>
     <Header/>
     <h1>À propos</h1>
+    <div>
+        <ul>
+            <li>Fiabilité</li>
+            <li>Respect</li>
+            <li>Service</li>
+            <li>Responsabilité</li>
+        </ul>
+    </div>
     <Footer/>
     </div>
   );
