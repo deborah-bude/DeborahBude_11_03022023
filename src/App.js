@@ -1,15 +1,24 @@
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/index";
+import Apropos from "./pages/Apropos/index";
+import LogementDetails from "./pages/LogementDetails/index";
+import Error404 from "./pages/Error/404";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div>
-    <Header/>
-    <h1>Accueil</h1>
-    <Footer/>
+    <div className="App">
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/apropos" element={<Apropos />} />
+        <Route path="/logements/:id" element={<LogementDetails />} />
+        <Route path="*" element={<Error404/>} />
+      </Routes>
+     <Footer/>
     </div>
-  );
+  )
 }
 
 export default App;

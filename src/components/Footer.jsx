@@ -1,6 +1,6 @@
 import logo from '../assets/logo-clair.png'
 
-export function Footer() {
+export default function Footer() {
     const siteName = "Kasa";
 
     return <footer>

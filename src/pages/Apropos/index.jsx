@@ -1,11 +1,9 @@
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import './App.css';
+import React from 'react';
+import '../../App.css';
 
-function App() {
+export default function Apropos() {
   return (
     <div>
-    <Header/>
     <h1>À propos</h1>
     <div>
         <ul>
@@ -15,9 +13,6 @@ function App() {
             <li>Responsabilité</li>
         </ul>
     </div>
-    <Footer/>
     </div>
   );
 }
-
-export default App;

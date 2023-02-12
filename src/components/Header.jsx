@@ -1,13 +1,15 @@
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.png';
+import { NavLink, Outlet } from "react-router-dom";
 
-export function Header() {
+export default function Header() {
     const siteName = "Kasa";
 
     return <header>
         <img src={logo} alt={siteName} className='kasa-logo' />
-        <div>
-            <a href="/">Accueil</a>
-            <a href="/apropos">À propos</a>
-        </div>
+        <nav>
+            <NavLink to="/">Accueil</NavLink>
+            <NavLink to="/apropos">À propos</NavLink>
+            <Outlet />
+        </nav>
     </header>
 }
