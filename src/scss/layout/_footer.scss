@@ -1,0 +1,14 @@
+.pied-page {
+    background-color: $footer-color;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #ffffff;
+    padding: 30px 0;
+    
+    img {
+        max-width: 100px;
+        margin-bottom: 20px;
+    }
+}

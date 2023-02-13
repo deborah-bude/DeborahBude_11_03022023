@@ -1,7 +1,7 @@
 import React from 'react';
-import '../../App.css';
+import '../../index.css';
 
-export default function Apropos() {
+export default function About() {
   return (
     <div>
     <h1>À propos</h1>
