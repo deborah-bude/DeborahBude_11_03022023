@@ -7,18 +7,18 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 function App() {
-  return (
-    <div className="App">
-      <Header/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/logements/:id" element={<LogementDetails />} />
-        <Route path="*" element={<Error404/>} />
-      </Routes>
-     <Footer/>
-    </div>
-  )
+	return (
+		<div className="App">
+			<Header />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/apropos" element={<About />} />
+				<Route path="/logements/:id" element={<LogementDetails />} />
+				<Route path="*" element={<Error404 />} />
+			</Routes>
+			<Footer />
+		</div>
+	);
 }
 
 export default App;

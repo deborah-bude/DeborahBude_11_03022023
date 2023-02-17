@@ -6,8 +6,8 @@ export default function LogementDetails() {
     console.log(params);
     
     return (
-        <div>
+        <main className="corps-page">
             <h1>Détails du logement</h1>
-        </div>
+        </main>
     )
 }

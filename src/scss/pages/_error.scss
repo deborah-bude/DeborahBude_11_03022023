@@ -1,0 +1,19 @@
+.corps-page.error {
+	text-align: center;
+	color: $primary-color;
+
+	p {
+		font-size: 2.4rem;
+		margin-bottom: 30px;
+	}
+
+	.link {
+		text-decoration: underline;
+	}
+}
+
+.title--error {
+	font-weight: 700;
+	font-size: 15rem;
+	margin-bottom: 30px;
+}
