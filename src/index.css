@@ -223,8 +223,8 @@ ol {
 }
 
 .collapse {
-  background-color: #f6f6f6;
   margin-bottom: 30px;
+  overflow: hidden;
   border-radius: 0px 0px 5px 5px;
 }
 
@@ -245,6 +245,7 @@ ol {
 .collapse__content {
   padding: 10px 20px;
   color: #FF6060;
+  background-color: #f6f6f6;
 }
 
 .logements {

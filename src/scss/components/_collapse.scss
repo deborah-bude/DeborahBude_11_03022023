@@ -1,25 +1,26 @@
 .collapse {
-    background-color: #f6f6f6;
-    margin-bottom: 30px;
-    border-radius: 0px 0px 5px 5px;
+	margin-bottom: 30px;
+	overflow: hidden;
+	border-radius: 0px 0px 5px 5px;
 }
 
 .collapse__title {
-    background: $primary-color;
-    border-radius: 5px;
-    color: #ffffff;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
+	background: $primary-color;
+	border-radius: 5px;
+	color: #ffffff;
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
 
-    i {
-        font-size: 1.6rem;
-    }
+	i {
+		font-size: 1.6rem;
+	}
 }
 
 .collapse__content {
-    padding: 10px 20px;
-    color: $primary-color;
+	padding: 10px 20px;
+	color: $primary-color;
+	background-color: #f6f6f6;
 }
