@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Error404() {
 	return (
@@ -8,7 +8,6 @@ export default function Error404() {
 			<Link className="link" to="/">
 				Retourner sur la page d’accueil
 			</Link>
-			<Outlet />
 		</main>
 	);
 }

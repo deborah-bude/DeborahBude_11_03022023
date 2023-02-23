@@ -1,5 +1,5 @@
 import logo from "../assets/logo.png";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
 	const siteName = "Kasa";
@@ -14,7 +14,6 @@ export default function Header() {
 				<NavLink className="entete-page__nav_items" to="/apropos">
 					À propos
 				</NavLink>
-				<Outlet />
 			</nav>
 		</header>
 	);
