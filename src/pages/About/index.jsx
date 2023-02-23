@@ -4,7 +4,7 @@ import Collapse from "../../components/Collapse";
 
 export default function About() {
 	const fiability_content =
-		"Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.";
+		"Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.";
 	const recpect_content =
 		"La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.";
 	const service_content =
@@ -15,12 +15,12 @@ export default function About() {
 		<main className="corps-page">
 			<section className="titre__page about"></section>
 			<div>
-				<ul>
-					<Collapse titre="Fiabilité" content={fiability_content} />
-					<Collapse titre="Respect" content={recpect_content} />
-					<Collapse titre="Service" content={service_content} />
-					<Collapse titre="Responsabilité" content={responsibility_content} />
-				</ul>
+				<div>
+					<Collapse titre="Fiabilité" content={<p>{fiability_content}</p>} />
+					<Collapse titre="Respect" content={<p>{recpect_content}</p>} />
+					<Collapse titre="Service" content={<p>{service_content}</p>} />
+					<Collapse titre="Responsabilité" content={<p>{responsibility_content}</p>} />
+				</div>
 			</div>
 		</main>
 	);
