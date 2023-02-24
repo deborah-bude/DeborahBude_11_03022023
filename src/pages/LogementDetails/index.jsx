@@ -2,22 +2,26 @@ import { React } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import logementsData from "../../logements.json";
 import Collapse from "../../components/Collapse";
+import Carrousel from "../../components/Caroussel";
 
 export default function LogementDetails() {
 	const params = useParams();
 	const logement = redirectionLogements(params.id);
 
-	const template = templateLogement(logement);
-
-	return <main className="corps-page">{template}</main>;
+	return <main className="corps-page">{logement}</main>;
 }
 
 function redirectionLogements(idLogement) {
-	const test = logementsData.find((p) => p.id === idLogement);
-	if (test !== undefined || test != null) {
-		return test;
+	const actualLogement = logementsData.find((p) => p.id === idLogement);
+	if (actualLogement !== undefined || actualLogement != null) {
+		const template = templateLogement(actualLogement);
+		return template;
 	} else {
-		console.log("retour page 404");
+		return (
+			<div>
+				<Navigate to="/404" replace={true} />
+			</div>
+		);
 	}
 }
 
@@ -52,7 +56,8 @@ function templateLogement(logement) {
 
 	return (
 		<div>
-			<img className="logement__caroussel" src={logement.cover} alt={logement.title} />
+			<Carrousel images_array={logement.pictures} />
+			{/* <img className="logement__caroussel" src={logement.cover} alt={logement.title} /> */}
 			<div className="header-logement">
 				<div className="header-logement__presentation">
 					<h1 className="header-logement__title">{logement.title}</h1>
