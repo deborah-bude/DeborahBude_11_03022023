@@ -13,46 +13,33 @@ export default function LogementDetails() {
 
 function redirectionLogements(idLogement) {
 	const actualLogement = logementsData.find((p) => p.id === idLogement);
-	if (actualLogement !== undefined || actualLogement != null) {
-		const template = templateLogement(actualLogement);
-		return template;
-	} else {
-		return (
-			<div>
-				<Navigate to="/404" replace={true} />
-			</div>
-		);
+	if (actualLogement !== undefined) {
+		return templateLogement(actualLogement);
 	}
+	return <Navigate to="/page-non-trouvee" replace={true} />;
 }
 
 function templateLogement(logement) {
-	let tags_liste = [];
-	for (let i = 0; i < logement.tags.length; i++) {
-		const idKey = "t" + i;
-		const tag = <li key={idKey}>{logement.tags[i]}</li>;
-		tags_liste.push(tag);
-	}
-
-	let logement_rating = [];
-	for (let i = 0; i < logement.rating; i++) {
-		const idKey = "fs" + i;
-		const full_stars = <i key={idKey} className="fa-solid fa-star full-star"></i>;
-		logement_rating.push(full_stars);
-	}
-	if (logement.rating < 5) {
-		const rating = 5 - logement.rating;
-		for (let i = 0; i < rating; i++) {
-			const idKey = "es" + i;
-			const empty_stars = <i key={idKey} className="fa-solid fa-star empty-star"></i>;
-			logement_rating.push(empty_stars);
-		}
-	}
-
-	let equipements_liste = [];
-	logement.equipments.forEach(function (item) {
-		const equipement = <p key={item}>{item}</p>;
-		equipements_liste.push(equipement);
+	const logement_tags = logement.tags.map((tag, index) => {
+		const idKey = "t" + index;
+		return <li key={idKey}>{tag}</li>;
 	});
+
+	const logement_rating = new Array(5).fill(0).map((el, index) => {
+		const idKey = "r" + index;
+		if (logement.rating > index) {
+			return <i key={idKey} className="fa-solid fa-star full-star"></i>;
+		}
+		return <i key={idKey} className="fa-solid fa-star empty-star"></i>;
+	});
+
+	const logement_equipements = logement.equipments.map((equipement, index) => {
+		const idKey = "t" + index;
+		return <p key={idKey}>{equipement}</p>;
+	});
+
+	const host_firstName = logement.host.name.split(" ")[0];
+	const host_name = logement.host.name.split(" ")[1];
 
 	return (
 		<div>
@@ -62,11 +49,14 @@ function templateLogement(logement) {
 				<div className="header-logement__presentation">
 					<h1 className="header-logement__title">{logement.title}</h1>
 					<p className="header-logement__location">{logement.location}</p>
-					<ul className="header-logement__tag">{tags_liste}</ul>
+					<ul className="header-logement__tag">{logement_tags}</ul>
 				</div>
 				<div className="logement__host">
 					<div className="logement__host-profile">
-						<p className="logement__host-name">{logement.host.name}</p>
+						<div className="logement__host-name">
+							<p>{host_firstName}</p>
+							<p>{host_name}</p>
+						</div>
 						<img
 							className="logement__host-picture"
 							src={logement.host.picture}
@@ -78,7 +68,7 @@ function templateLogement(logement) {
 			</div>
 			<div className="logement-details">
 				<Collapse titre="Description" content={<p>{logement.description}</p>} />
-				<Collapse titre="Équipement" content={equipements_liste} />
+				<Collapse titre="Équipement" content={logement_equipements} />
 			</div>
 		</div>
 	);

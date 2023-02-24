@@ -3,20 +3,13 @@ import { useState } from "react";
 export default function Collapse(content_collape) {
 	const [isOpen, setIsOpen] = useState(false);
 
-	return isOpen ? (
+	return (
 		<div className="collapse">
-			<div onClick={() => setIsOpen(isOpen ? false : true)} className="collapse__title">
+			<div onClick={() => setIsOpen(!isOpen)} className="collapse__title">
 				<p>{content_collape.titre}</p>
-				<i className="fa-solid fa-chevron-down"></i>
+				<i className={`fa-solid fa-chevron-${isOpen ? "up" : "down"}`}></i>
 			</div>
-			<div className="collapse__content">{content_collape.content}</div>
-		</div>
-	) : (
-		<div className="collapse">
-			<div onClick={() => setIsOpen(isOpen ? false : true)} className="collapse__title">
-				<p>{content_collape.titre}</p>
-				<i className="fa-solid fa-chevron-up"></i>
-			</div>
+			{isOpen && <div className="collapse__content">{content_collape.content}</div>}
 		</div>
 	);
 }
