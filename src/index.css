@@ -341,5 +341,9 @@ ol {
     height: 255px;
   }
 }
+.carousel__controls {
+  font-size: 24px;
+  margin-right: 50px;
+}
 
 /*# sourceMappingURL=index.css.map */
