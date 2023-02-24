@@ -1,12 +1,14 @@
 import logo from "../assets/logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Header() {
 	const siteName = "Kasa";
 
 	return (
 		<header className="entete-page">
-			<img src={logo} alt={siteName} className="kasa-logo" />
+			<Link className="kasa-logo" to="/">
+				<img src={logo} alt={siteName} />
+			</Link>
 			<nav className="entete-page__nav">
 				<NavLink className="entete-page__nav_items" to="/">
 					Accueil
