@@ -8,8 +8,9 @@
 	align-items: center;
 	padding: 30px 0;
 
-	img {
-		max-width: 150px;
+	.kasa-logo {
+		width: 150px;
+		max-width: 25%;
 	}
 
 	&__nav_items {

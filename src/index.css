@@ -56,8 +56,9 @@ ol {
   align-items: center;
   padding: 30px 0;
 }
-.entete-page img {
-  max-width: 150px;
+.entete-page .kasa-logo {
+  width: 150px;
+  max-width: 25%;
 }
 .entete-page__nav_items {
   margin-left: 20px;
@@ -110,6 +111,7 @@ ol {
   text-align: center;
   background-color: black;
   margin-bottom: 30px;
+  padding: 20px;
 }
 .titre__page:after {
   content: "";
@@ -124,7 +126,7 @@ ol {
 .titre__page.home:after {
   background: url("./assets/header-home.png");
   background-position: center;
-  background-size: 120%;
+  background-size: cover;
 }
 .titre__page.about:after {
   background: url("./assets/header-about.png");
@@ -136,7 +138,6 @@ ol {
   display: flex;
   justify-content: space-between;
   color: #FF6060;
-  align-items: center;
   flex-wrap: wrap;
   margin: 30px 0;
 }
@@ -147,44 +148,43 @@ ol {
   font-size: 3.6rem;
   margin: 0;
 }
-.header-logement__host {
-  display: flex;
-  align-items: center;
-  width: 150px;
+.header-logement__location {
+  margin-bottom: 20px;
 }
-.header-logement__host-name {
-  text-align: right;
-}
-.header-logement__host-picture {
-  width: 64px;
-  border-radius: 100%;
-  margin-left: 10px;
-}
-
-.logement-caracteristique {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 30px 0;
-}
-.logement-caracteristique__tag {
-  width: 80%;
-}
-.logement-caracteristique__tag li {
+.header-logement__tag li {
   display: inline-block;
   background: #FF6060;
   color: #ffffff;
   border-radius: 10px;
   padding: 5px 15px;
   font-size: 1.4rem;
-  margin-right: 10px;
+  margin: 0 10px 10px 0;
 }
-.logement-caracteristique__tag li:last-child {
+.header-logement__tag li:last-child {
   margin-right: 0;
 }
-.logement-caracteristique__rating {
-  font-size: 2rem;
+
+.logement__host {
+  display: flex;
+  width: 20%;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: space-between;
+}
+.logement__host-rating {
+  font-size: 2.2rem;
+}
+.logement__host-profile {
+  display: flex;
+  align-items: center;
+}
+.logement__host-name {
+  text-align: right;
+}
+.logement__host-picture {
+  width: 64px;
+  border-radius: 100%;
+  margin-left: 10px;
 }
 
 .full-star {
@@ -199,6 +199,7 @@ ol {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
 }
 .logement-details .collapse {
   width: 45%;
@@ -261,35 +262,84 @@ ol {
 }
 .logements-items__img {
   width: 100%;
-  height: 340px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
-  position: relative;
-  z-index: 2;
-  display: inline-block;
-}
-.logements-items__img:after {
-  content: "dfgdfgdfg";
-  width: 100%;
-  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
   z-index: -1;
 }
 .logements-items__title {
   color: #fff;
-  position: absolute;
-  z-index: 3;
   padding: 20px;
-  top: 0;
-  left: 0;
   display: flex;
   align-items: flex-end;
-  width: calc(100% - 40px);
-  height: calc(100% - 43px);
+  height: 340px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+@media screen and (max-width: 850px) {
+  .entete-page__nav_items {
+    font-size: 1.2rem;
+  }
+  .logements {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .logements-items__title {
+    height: 300px;
+  }
+  .header-logement__presentation,
+  .logement__host {
+    width: 100%;
+  }
+  .header-logement__title {
+    font-size: 1.8rem;
+  }
+  .header-logement__tag li {
+    font-size: 1.2rem;
+  }
+  .logement__host {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+  }
+  .logement__host-profile {
+    max-width: 45%;
+  }
+  .logement__host-name {
+    font-size: 1.2rem;
+  }
+  .logement__host-picture {
+    width: 50px;
+  }
+  .logement__host-rating {
+    font-size: 1.8rem;
+    max-width: 50%;
+    margin-right: 5%;
+  }
+  .logement-details .collapse {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 540px) {
+  h1 {
+    font-size: 2.4rem;
+    text-align: left;
+  }
+  p,
+  li,
+  ol,
+  ul {
+    font-size: 1.4rem;
+  }
+  .logements {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .logements-items__title {
+    height: 255px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

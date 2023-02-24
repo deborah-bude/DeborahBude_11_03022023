@@ -2,7 +2,6 @@ import { React } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import logementsData from "../../logements.json";
 import Collapse from "../../components/Collapse";
-import Carrousel from "../../components/Caroussel";
 
 export default function LogementDetails() {
 	const params = useParams();
@@ -53,7 +52,6 @@ function templateLogement(logement) {
 
 	return (
 		<div>
-			<Carrousel image_array={logement.pictures} />
 			<img className="logement__caroussel" src={logement.cover} alt={logement.title} />
 			<div className="header-logement">
 				<div className="header-logement__presentation">

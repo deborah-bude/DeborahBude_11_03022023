@@ -18,6 +18,7 @@
 	text-align: center;
 	background-color: black;
 	margin-bottom: 30px;
+	padding: 20px;
 
 	&:after {
 		content: "";
@@ -33,7 +34,7 @@
 	&.home:after {
 		background: url("./assets/header-home.png");
 		background-position: center;
-		background-size: 120%;
+		background-size: cover;
 	}
 
 	&.about:after {
