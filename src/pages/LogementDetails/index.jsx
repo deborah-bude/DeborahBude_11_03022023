@@ -1,7 +1,8 @@
 import { React } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import logementsData from "../../logements.json";
 import Collapse from "../../components/Collapse";
+import Carrousel from "../../components/Caroussel";
 
 export default function LogementDetails() {
 	const params = useParams();
@@ -52,24 +53,25 @@ function templateLogement(logement) {
 
 	return (
 		<div>
-			<img className="logements-items__img" src={logement.cover} alt={logement.title} />
+			<Carrousel image_array={logement.pictures} />
+			<img className="logement__caroussel" src={logement.cover} alt={logement.title} />
 			<div className="header-logement">
 				<div className="header-logement__presentation">
 					<h1 className="header-logement__title">{logement.title}</h1>
 					<p className="header-logement__location">{logement.location}</p>
+					<ul className="header-logement__tag">{tags_liste}</ul>
 				</div>
-				<div className="header-logement__host">
-					<p className="header-logement__host-name">{logement.host.name}</p>
-					<img
-						className="header-logement__host-picture"
-						src={logement.host.picture}
-						alt={logement.host.name}
-					/>
+				<div className="logement__host">
+					<div className="logement__host-profile">
+						<p className="logement__host-name">{logement.host.name}</p>
+						<img
+							className="logement__host-picture"
+							src={logement.host.picture}
+							alt={logement.host.name}
+						/>
+					</div>
+					<div className="logement__host-rating">{logement_rating}</div>
 				</div>
-			</div>
-			<div className="logement-caracteristique">
-				<ul className="logement-caracteristique__tag">{tags_liste}</ul>
-				<div className="logement-caracteristique__rating">{logement_rating}</div>
 			</div>
 			<div className="logement-details">
 				<Collapse titre="Description" content={<p>{logement.description}</p>} />
