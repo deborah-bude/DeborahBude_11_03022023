@@ -21,20 +21,22 @@ export default function Carrousel({ images_array }) {
 	}
 
 	return (
-		<div className="carousel__wrapper">
+		<div className="caroussel_container">
 			<i
 				tabIndex="0"
 				onClick={showPrevSet}
-				className="fa-solid fa-chevron-left carousel_control carousel_control--prev"
+				className="fa-solid fa-chevron-left caroussel_control caroussel_control--prev"
 			></i>
 			<i
 				tabIndex="0"
 				onClick={showNextSet}
-				className="fa-solid fa-chevron-right carousel_control carousel_control--next"
+				className="fa-solid fa-chevron-right caroussel_control caroussel_control--next"
 			></i>
-			<div className="carousel__container">
-				<img src={images_array[currentIndex]} alt={images_array[currentIndex]} />
-			</div>
+			<img
+				className="caroussel_img"
+				src={images_array[currentIndex]}
+				alt={images_array[currentIndex]}
+			/>
 		</div>
 	);
 }
