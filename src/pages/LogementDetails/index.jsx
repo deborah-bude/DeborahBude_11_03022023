@@ -44,7 +44,6 @@ function templateLogement(logement) {
 	return (
 		<div>
 			<Carrousel images_array={logement.pictures} />
-			{/* <img className="logement__caroussel" src={logement.cover} alt={logement.title} /> */}
 			<div className="header-logement">
 				<div className="header-logement__presentation">
 					<h1 className="header-logement__title">{logement.title}</h1>
