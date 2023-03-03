@@ -5,7 +5,7 @@ export default function Collapse(content_collape) {
 
 	return (
 		<div className="collapse">
-			<div onClick={() => setIsOpen(!isOpen)} className="collapse__title">
+			<div tabIndex="0" onClick={() => setIsOpen(!isOpen)} className="collapse__title">
 				<p>{content_collape.titre}</p>
 				<i className={`fa-solid fa-chevron-${isOpen ? "up" : "down"}`}></i>
 			</div>
