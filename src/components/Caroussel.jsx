@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 export default function Carrousel({ images_array }) {
-	console.log(images_array, images_array.length);
 	const [currentIndex, changeCurrentIndex] = useState(0);
 
 	function showPrevSet() {
@@ -25,11 +24,13 @@ export default function Carrousel({ images_array }) {
 			<i
 				tabIndex="0"
 				onClick={showPrevSet}
+				onKeyDown={(e) => e.key === "Enter" && showPrevSet()}
 				className="fa-solid fa-chevron-left caroussel_control caroussel_control--prev"
 			></i>
 			<i
 				tabIndex="0"
 				onClick={showNextSet}
+				onKeyDown={(e) => e.key === "Enter" && showNextSet()}
 				className="fa-solid fa-chevron-right caroussel_control caroussel_control--next"
 			></i>
 			<img
@@ -37,6 +38,9 @@ export default function Carrousel({ images_array }) {
 				src={images_array[currentIndex]}
 				alt={images_array[currentIndex]}
 			/>
+			<p>
+				{currentIndex + 1} / {images_array.length}
+			</p>
 		</div>
 	);
 }
