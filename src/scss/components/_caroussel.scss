@@ -4,11 +4,11 @@
 		position: relative;
 		height: 450px;
 		overflow: hidden;
+		color: #ffffff;
 	}
 
 	&_control {
 		font-size: 50px;
-		color: #ffffff;
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
@@ -29,5 +29,14 @@
 		height: 100%;
 		object-fit: cover;
 		object-position: center;
+	}
+
+	&_counter {
+		position: absolute;
+		bottom: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+		z-index: 2;
 	}
 }

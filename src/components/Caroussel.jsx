@@ -38,7 +38,7 @@ export default function Carrousel({ images_array }) {
 				src={images_array[currentIndex]}
 				alt={images_array[currentIndex]}
 			/>
-			<p>
+			<p className="caroussel_counter">
 				{currentIndex + 1} / {images_array.length}
 			</p>
 		</div>
