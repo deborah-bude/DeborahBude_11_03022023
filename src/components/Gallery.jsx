@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Carrousel({ images_array }) {
+export default function Gallery({ images_array }) {
 	const [currentIndex, changeCurrentIndex] = useState(0);
 
 	function showPrevSet() {
